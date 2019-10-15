@@ -12,7 +12,7 @@ rpm -qa|egrep "rhn|redhat|subscription|cockpit"
 
 #4. Remove redhat packages with dependencies
 
-yum -y remove rhnlib redhat-support-tool redhat-support-lib-python redhat-release-eula subscription-manager*
+yum -y remove rhnlib redhat-support-tool redhat-support-lib-python redhat-rpm-config redhat-release-eula subscription-manager*
 
 #If you're not using cockpit (see https://cockpit-project.org/), then remove it too
 yum -y remove cockpit* 
@@ -22,7 +22,6 @@ yum -y remove cockpit*
 rpm -e --nodeps redhat-release-server
 rm /etc/os-release.rpmsave
 
-rpm -e --nodeps redhat-rpm-config
 rpm -e --nodeps redhat-logos
 rpm -e --nodeps redhat-indexhtml
 rpm -e --nodeps yum
