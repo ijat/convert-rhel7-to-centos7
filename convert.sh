@@ -53,15 +53,11 @@ rpm -Uvh *.rpm
 
 #10. Clean yum and upgrade old redhat packages to Centos packages
 
-#yum -y clean all
-#yum -y upgrade
+rm -rf /var/lib/rhsm/
+yum -y clean all
+yum -y upgrade
 
 #11. Update, initramfs, grub and restart
 
-dracut -f
 grub2-mkconfig -o /boot/grub2/grub.cfg
-reboot
-
-# After restart
-#yum -y clean all
-#yum -y upgrade
+echo "Reboot your system now"
