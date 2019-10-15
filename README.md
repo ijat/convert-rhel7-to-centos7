@@ -63,15 +63,15 @@ rpm --import RPM-GPG-KEY-CentOS-7
 rpm -Uvh *.rpm
 ```
 
-11. Clean yum and upgrade old redhat packages to Centos packages
-```
-yum clean all
-yum upgrade
-```
-
-12. Update, initramfs, grub and restart
+11. Update, initramfs, grub and restart
 ```
 dracut -f
 grub2-mkconfig -o /boot/grub2/grub.cfg
 reboot
+```
+
+12. After reboot, clean yum and upgrade old redhat packages to Centos packages
+```
+yum clean all
+yum upgrade
 ```
