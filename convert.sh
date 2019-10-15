@@ -12,10 +12,10 @@ rpm -qa|egrep "rhn|redhat|subscription|cockpit"
 
 #4. Remove redhat packages with dependencies
 
-yum remove rhnlib redhat-support-tool redhat-support-lib-python redhat-release-eula subscription-manager*
+yum -y remove rhnlib redhat-support-tool redhat-support-lib-python redhat-release-eula subscription-manager*
 
 #If you're not using cockpit (see https://cockpit-project.org/), then remove it too
-yum remove cockpit* 
+yum -y remove cockpit* 
 
 #5. Remove redhat packages without dependencies
 
@@ -53,8 +53,8 @@ rpm -Uvh *.rpm
 
 #10. Clean yum and upgrade old redhat packages to Centos packages
 
-yum clean all
-yum upgrade
+yum -y clean all
+yum -y upgrade
 
 #11. Update, initramfs, grub and restart
 
