@@ -62,7 +62,7 @@ rpm --import RPM-GPG-KEY-CentOS-7
 rpm -Uvh *.rpm
 ```
 
-11. After reboot, clean yum and upgrade old redhat packages to Centos packages
+11. Clean yum and upgrade old redhat packages to Centos packages
 ```
 rm -rf /var/lib/rhsm/
 yum clean all
